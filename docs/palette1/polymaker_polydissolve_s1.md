@@ -1,6 +1,6 @@
 # PolyMaker PolyDissolve S1
 
-For [Palette/Palette+](../palette.md)
+For [Palette/Palette+](palette.md)
 
 ## Splices
 

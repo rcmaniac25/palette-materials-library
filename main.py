@@ -8,6 +8,7 @@ import shutil
 is_python_3 = sys.version_info[0] == 3
 md_root_docs_path = "docs"
 os_root_docs_path = "./{0}".format(md_root_docs_path)
+palette_materials_file = "palette.md"
 
 # dict has some different values between python 2 and 3, so helper utils for now
 def util_dict_items(d):
@@ -80,11 +81,8 @@ def generate_material_file_path(material, palette_type, root, for_web=False):
 	filename = material.lower().replace(" ", "_")
 	return correct_path(os.path.join(generate_material_path(palette_type, root), generate_material_file(material)), for_web)
 
-def generate_palette_lookup_path(root, for_web=False):
-	return correct_path(os.path.join(root, "palette.md"), for_web)
-
 def generate_palette_file_path(palette_type, root, for_web=False):
-	return generate_palette_lookup_path(generate_material_path(palette_type, root), for_web)
+	return correct_path(os.path.join(generate_material_path(palette_type, root), palette_materials_file), for_web)
 
 def print_row(mat_merge_key, mat_merge_value, mat_merge_value_reverse, mat_gen, typ, file):
 	# m1 == m2 : only one set of values
@@ -131,8 +129,7 @@ def print_for_palette_type(materials, palette_type):
 	for mat_for_gen in material_names:
 		path = generate_material_file_path(mat_for_gen, palette_type, os_root_docs_path)
 		with open(path, "w") as doc_file:
-			palette_path = generate_palette_lookup_path("..", for_web=True)
-			doc_file.write("# {0}\n\nFor [Palette{1}]({2})\n\n".format(mat_for_gen, get_palette_type_name_mod(palette_type), palette_path))
+			doc_file.write("# {0}\n\nFor [Palette{1}]({2})\n\n".format(mat_for_gen, get_palette_type_name_mod(palette_type), palette_materials_file))
 
 			doc_file.write("## Splices\n\nMaterial | Values\n-------- | ------\n")
 			for mat_for_merg in material_names:

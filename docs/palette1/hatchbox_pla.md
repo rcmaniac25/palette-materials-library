@@ -1,6 +1,6 @@
 # Hatchbox PLA
 
-For [Palette/Palette+](../palette.md)
+For [Palette/Palette+](palette.md)
 
 ## Splices
 
