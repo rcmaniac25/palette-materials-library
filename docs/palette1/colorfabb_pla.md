@@ -1,24 +1,23 @@
 # ColorFabb PLA
 
-For Palette/Palette+
+For [Palette/Palette+](../palette.md)
 
 ## Splices
 
 Material | Values
 -------- | ------
-ColorFabb PLA | Heat Factor: 2, Compression Factor: 2, Reverse Splicing: False
-ColorFabb PLA (ingoing) to ColorFabb XT (outgoing) | Heat Factor: 5, Compression Factor: 2, Reverse Splicing: False
-ColorFabb XT (ingoing) to ColorFabb PLA (outgoing) | Heat Factor: 5, Compression Factor: 5, Reverse Splicing: False
-ColorFabb PLA (ingoing) to ColorFabb Bamboofill (outgoing) | Heat Factor: 2, Compression Factor: 2, Reverse Splicing: False
-ColorFabb Bamboofill (ingoing) to ColorFabb PLA (outgoing) | Heat Factor: 2, Compression Factor: 2, Reverse Splicing: False
-ColorFabb PLA (ingoing) to FABtotum PLA (outgoing) | Heat Factor: 2, Compression Factor: 2, Reverse Splicing: False
-FABtotum PLA (ingoing) to ColorFabb PLA (outgoing) | Heat Factor: 2, Compression Factor: 2, Reverse Splicing: False
-ColorFabb PLA (ingoing) to Hatchbox PLA (outgoing) | Heat Factor: 2, Compression Factor: 2, Reverse Splicing: False
-Hatchbox PLA (ingoing) to ColorFabb PLA (outgoing) | Heat Factor: 2, Compression Factor: 2, Reverse Splicing: False
-ColorFabb PLA (ingoing) to PolyMaker PolyDissolve S1 (outgoing) | Heat Factor: 6, Compression Factor: 4.5, Reverse Splicing: False
-PolyMaker PolyDissolve S1 (ingoing) to ColorFabb PLA (outgoing) | Heat Factor: 8.5, Compression Factor: 4, Reverse Splicing: False
-ColorFabb PLA (ingoing) to Printed Solid Daily PLA (outgoing) | Heat Factor: 2, Compression Factor: 2, Reverse Splicing: False
-Printed Solid Daily PLA (ingoing) to ColorFabb PLA (outgoing) | Heat Factor: 2, Compression Factor: 2, Reverse Splicing: False
-ColorFabb PLA (ingoing) to Prusa PLA (outgoing) | Heat Factor: 2, Compression Factor: 2, Reverse Splicing: False
-Prusa PLA (ingoing) to ColorFabb PLA (outgoing) | Heat Factor: 2, Compression Factor: 2, Reverse Splicing: False
-
+_ColorFabb PLA_ | **Heat Factor**: 2, **Compression Factor**: 2, **Reverse Splicing**: False
+_ColorFabb PLA_ (ingoing) to [ColorFabb XT](colorfabb_xt.md) (outgoing) | **Heat Factor**: 5, **Compression Factor**: 2, **Reverse Splicing**: False
+[ColorFabb XT](colorfabb_xt.md) (ingoing) to _ColorFabb PLA_ (outgoing) | **Heat Factor**: 5, **Compression Factor**: 5, **Reverse Splicing**: False
+_ColorFabb PLA_ (ingoing) to [ColorFabb Bamboofill](colorfabb_bamboofill.md) (outgoing) | **Heat Factor**: 2, **Compression Factor**: 2, **Reverse Splicing**: False
+[ColorFabb Bamboofill](colorfabb_bamboofill.md) (ingoing) to _ColorFabb PLA_ (outgoing) | **Heat Factor**: 2, **Compression Factor**: 2, **Reverse Splicing**: False
+_ColorFabb PLA_ (ingoing) to [FABtotum PLA](fabtotum_pla.md) (outgoing) | **Heat Factor**: 2, **Compression Factor**: 2, **Reverse Splicing**: False
+[FABtotum PLA](fabtotum_pla.md) (ingoing) to _ColorFabb PLA_ (outgoing) | **Heat Factor**: 2, **Compression Factor**: 2, **Reverse Splicing**: False
+_ColorFabb PLA_ (ingoing) to [Hatchbox PLA](hatchbox_pla.md) (outgoing) | **Heat Factor**: 2, **Compression Factor**: 2, **Reverse Splicing**: False
+[Hatchbox PLA](hatchbox_pla.md) (ingoing) to _ColorFabb PLA_ (outgoing) | **Heat Factor**: 2, **Compression Factor**: 2, **Reverse Splicing**: False
+_ColorFabb PLA_ (ingoing) to [PolyMaker PolyDissolve S1](polymaker_polydissolve_s1.md) (outgoing) | **Heat Factor**: 6, **Compression Factor**: 4.5, **Reverse Splicing**: False
+[PolyMaker PolyDissolve S1](polymaker_polydissolve_s1.md) (ingoing) to _ColorFabb PLA_ (outgoing) | **Heat Factor**: 8.5, **Compression Factor**: 4, **Reverse Splicing**: False
+_ColorFabb PLA_ (ingoing) to [Printed Solid Daily PLA](printed_solid_daily_pla.md) (outgoing) | **Heat Factor**: 2, **Compression Factor**: 2, **Reverse Splicing**: False
+[Printed Solid Daily PLA](printed_solid_daily_pla.md) (ingoing) to _ColorFabb PLA_ (outgoing) | **Heat Factor**: 2, **Compression Factor**: 2, **Reverse Splicing**: False
+_ColorFabb PLA_ (ingoing) to [Prusa PLA](prusa_pla.md) (outgoing) | **Heat Factor**: 2, **Compression Factor**: 2, **Reverse Splicing**: False
+[Prusa PLA](prusa_pla.md) (ingoing) to _ColorFabb PLA_ (outgoing) | **Heat Factor**: 2, **Compression Factor**: 2, **Reverse Splicing**: False

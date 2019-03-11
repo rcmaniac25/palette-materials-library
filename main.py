@@ -80,8 +80,11 @@ def generate_material_file_path(material, palette_type, root, for_web=False):
 	filename = material.lower().replace(" ", "_")
 	return correct_path(os.path.join(generate_material_path(palette_type, root), generate_material_file(material)), for_web)
 
+def generate_palette_lookup_path(root, for_web=False):
+	return correct_path(os.path.join(root, "palette.md"), for_web)
+
 def generate_palette_file_path(palette_type, root, for_web=False):
-	return correct_path(os.path.join(generate_material_path(palette_type, root), "Palette.md"), for_web)
+	return generate_palette_lookup_path(generate_material_path(palette_type, root), for_web)
 
 def print_row(mat_merge_key, mat_merge_value, mat_merge_value_reverse, mat_gen, typ, file):
 	# m1 == m2 : only one set of values
@@ -89,20 +92,21 @@ def print_row(mat_merge_key, mat_merge_value, mat_merge_value_reverse, mat_gen, 
 	# m2[combo][m1] : m1 = outgo, m2 = ingo
 
 	def print_P(key, value):
-		file.write("{0} | Heat Factor: {1}, Compression Factor: {2}, Reverse Splicing: {3}\n".format(key, value["heatFactor"], value["compressionFactor"], value["reverse"]))
+		file.write("{0} | **Heat Factor**: {1}, **Compression Factor**: {2}, **Reverse Splicing**: {3}\n".format(key, value["heatFactor"], value["compressionFactor"], value["reverse"]))
 
 	def print_SCx(key, value):
-		file.write("{0} | Heat Factor: {1}, Compression Factor: {2}, Cooling Factor: {3}, Reverse Splicing: {4}\n".format(key, value["heatFactor"], value["compressionFactor"], value["coolingFactor"], value["reverse"]))
+		file.write("{0} | **Heat Factor**: {1}, **Compression Factor**: {2}, **Cooling Factor**: {3}, **Reverse Splicing**: {4}\n".format(key, value["heatFactor"], value["compressionFactor"], value["coolingFactor"], value["reverse"]))
 
 	def print_self():
 		if typ == "P":
-			print_P(mat_merge_key, mat_merge_value)
+			print_P("_{0}_".format(mat_merge_key), mat_merge_value)
 		else:
-			print_SCx(mat_merge_key, mat_merge_value)
+			print_SCx("_{0}_".format(mat_merge_key), mat_merge_value)
 
 	def print_other():
-		combo1 = "{0} (ingoing) to {1} (outgoing)".format(mat_gen, mat_merge_key)
-		combo2 = "{0} (ingoing) to {1} (outgoing)".format(mat_merge_key, mat_gen)
+		mat_gen_file = generate_material_file(mat_merge_key)
+		combo1 = "_{0}_ (ingoing) to [{1}]({2}) (outgoing)".format(mat_gen, mat_merge_key, mat_gen_file)
+		combo2 = "[{0}]({1}) (ingoing) to _{2}_ (outgoing)".format(mat_merge_key, mat_gen_file, mat_gen)
 		do_combo2 = mat_merge_value_reverse["heatFactor"] != 0 and mat_merge_value_reverse["compressionFactor"] != 0
 
 		if typ == "P":
@@ -127,7 +131,8 @@ def print_for_palette_type(materials, palette_type):
 	for mat_for_gen in material_names:
 		path = generate_material_file_path(mat_for_gen, palette_type, os_root_docs_path)
 		with open(path, "w") as doc_file:
-			doc_file.write("# {0}\n\nFor Palette{1}\n\n".format(mat_for_gen, get_palette_type_name_mod(palette_type)))
+			palette_path = generate_palette_lookup_path("..", for_web=True)
+			doc_file.write("# {0}\n\nFor [Palette{1}]({2})\n\n".format(mat_for_gen, get_palette_type_name_mod(palette_type), palette_path))
 
 			doc_file.write("## Splices\n\nMaterial | Values\n-------- | ------\n")
 			for mat_for_merg in material_names:
@@ -136,7 +141,6 @@ def print_for_palette_type(materials, palette_type):
 
 				print_row(mat_for_merg, mat_for_merg_value, mat_for_merg_value_reversed, mat_for_gen, palette_type, doc_file)
 
-			doc_file.write("\n")
 			doc_file.flush()
 
 		path = generate_palette_file_path(palette_type, os_root_docs_path)
@@ -146,7 +150,7 @@ def print_for_palette_type(materials, palette_type):
 
 def define_root_docs(palette_type):
 	# Materials Splices
-	path = os.path.join(os_root_docs_path, "MaterialSplices.md")
+	path = os.path.join(os_root_docs_path, "material_splices.md")
 	if os.path.exists(path):
 		os.remove(path)
 

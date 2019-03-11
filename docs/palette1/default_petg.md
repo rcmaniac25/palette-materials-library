@@ -1,10 +1,9 @@
 # Default PETG
 
-For Palette/Palette+
+For [Palette/Palette+](../palette.md)
 
 ## Splices
 
 Material | Values
 -------- | ------
-Default PETG | Heat Factor: 2, Compression Factor: 2, Reverse Splicing: False
-
+_Default PETG_ | **Heat Factor**: 2, **Compression Factor**: 2, **Reverse Splicing**: False

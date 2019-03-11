@@ -4,7 +4,7 @@ A generator for Palette materials documents.
 
 # Material Splices
 
-See [Material Splices](docs/MaterialSplices.md)
+See [Material Splices](docs/material_splices.md)
 
 # Requirements
 

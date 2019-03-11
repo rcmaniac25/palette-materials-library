@@ -1,11 +1,10 @@
 # Default Soluble
 
-For Palette/Palette+
+For [Palette/Palette+](../palette.md)
 
 ## Splices
 
 Material | Values
 -------- | ------
-Default Soluble (ingoing) to Default PLA (outgoing) | Heat Factor: 6, Compression Factor: 4, Reverse Splicing: False
-Default PLA (ingoing) to Default Soluble (outgoing) | Heat Factor: 6, Compression Factor: 4, Reverse Splicing: False
-
+_Default Soluble_ (ingoing) to [Default PLA](default_pla.md) (outgoing) | **Heat Factor**: 6, **Compression Factor**: 4, **Reverse Splicing**: False
+[Default PLA](default_pla.md) (ingoing) to _Default Soluble_ (outgoing) | **Heat Factor**: 6, **Compression Factor**: 4, **Reverse Splicing**: False
