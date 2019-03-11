@@ -6,7 +6,8 @@ import sys
 import shutil
 
 is_python_3 = sys.version_info[0] == 3
-root_docs_path = "./docs"
+md_root_docs_path = "docs"
+os_root_docs_path = "./{0}".format(md_root_docs_path)
 
 # dict has some different values between python 2 and 3, so helper utils for now
 def util_dict_items(d):
@@ -64,6 +65,24 @@ def get_palette_type_folder(typ):
 		return " palette2pro"
 	return typ
 
+def correct_path(path, for_web=False):
+	if for_web:
+		return path.replace('\\', '/')
+	return path
+
+def generate_material_file(material):
+	return "{0}.md".format(material.lower().replace(" ", "_"))
+
+def generate_material_path(palette_type, root, for_web=False):
+	return correct_path(os.path.join(root, get_palette_type_folder(palette_type)), for_web)
+
+def generate_material_file_path(material, palette_type, root, for_web=False):
+	filename = material.lower().replace(" ", "_")
+	return correct_path(os.path.join(generate_material_path(palette_type, root), generate_material_file(material)), for_web)
+
+def generate_palette_file_path(palette_type, root, for_web=False):
+	return correct_path(os.path.join(generate_material_path(palette_type, root), "Palette.md"), for_web)
+
 def print_row(mat_merge_key, mat_merge_value, mat_merge_value_reverse, mat_gen, typ, file):
 	# m1 == m2 : only one set of values
 	# m1[combo][m2] : m1 = ingo, m2 = outgo
@@ -106,8 +125,7 @@ def print_for_palette_type(materials, palette_type):
 			material_names.append(mat_key)
 
 	for mat_for_gen in material_names:
-		filename = mat_for_gen.lower().replace(" ", "_")
-		path = os.path.join(root_docs_path, get_palette_type_folder(palette_type), "{0}.md".format(filename))
+		path = generate_material_file_path(mat_for_gen, palette_type, os_root_docs_path)
 		with open(path, "w") as doc_file:
 			doc_file.write("# {0}\n\nFor Palette{1}\n\n".format(mat_for_gen, get_palette_type_name_mod(palette_type)))
 
@@ -120,6 +138,28 @@ def print_for_palette_type(materials, palette_type):
 
 			doc_file.write("\n")
 			doc_file.flush()
+
+		path = generate_palette_file_path(palette_type, os_root_docs_path)
+		with open(path, "a") as palette_doc:
+			file = generate_material_file(mat_for_gen)
+			palette_doc.write(" - [{0}]({1})\n".format(mat_for_gen, file))
+
+def define_root_docs(palette_type):
+	# Materials Splices
+	path = os.path.join(os_root_docs_path, "MaterialSplices.md")
+	if os.path.exists(path):
+		os.remove(path)
+
+	with open(path, "w") as splice_doc:
+		splice_doc.write("# Material Splices\n\nKnown Palettes:\n\n - [Palette{0}]({1})\n".format(get_palette_type_name_mod(palette_type), generate_palette_file_path(palette_type, "", for_web=True)))
+
+	# Palette-specific (to be appended to)
+	path = generate_palette_file_path(palette_type, os_root_docs_path)
+	if os.path.exists(path):
+		os.remove(path)
+
+	with open(path, "w") as palette_doc:
+		palette_doc.write("# Palette{0} Material Splices\n\n## Materials\n\n".format(get_palette_type_name_mod(palette_type)))
 
 if __name__ == "__main__":
 	print("Starting")
@@ -134,12 +174,15 @@ if __name__ == "__main__":
 		print("WARNING: Code written against version 2 of the materials file. Found version {0} which may have a different format".format(materials["version"]))
 
 	print("Preparing folders")
-	if not os.path.isdir(root_docs_path):
-		os.mkdir(root_docs_path)
-	path = os.path.normpath(os.path.join(root_docs_path, get_palette_type_folder(palette_type)))
+	if not os.path.isdir(os_root_docs_path):
+		os.mkdir(os_root_docs_path)
+	path = os.path.normpath(os.path.join(os_root_docs_path, get_palette_type_folder(palette_type)))
 	if os.path.isdir(path):
 		shutil.rmtree(path)
 	os.mkdir(path)
+
+	print("Preparing root documents")
+	define_root_docs(palette_type)
 
 	print("Writing material documents")
 	print_for_palette_type(materials, palette_type)

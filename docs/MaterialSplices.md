@@ -1,3 +1,5 @@
-# Inital Page
+# Material Splices
 
-Test until generator is working correctly
+Known Palettes:
+
+ - [Palette/Palette+](palette1/Palette.md)
