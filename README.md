@@ -1,6 +1,10 @@
 # Palette Materials Resource
 
-A generator for Palette materials documents
+A generator for Palette materials documents.
+
+# Material Splices
+
+See [Material Splices](docs/MaterialSplices.md)
 
 # Requirements
 
