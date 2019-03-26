@@ -6,6 +6,8 @@
  - [Default PETG](default_petg.md)
  - [Default TPU](default_tpu.md)
  - [Default Soluble](default_soluble.md)
+ - [Amazon Basics PLA](amazon_basics_pla.md)
+ - [BAMtack PLA](bamtack_pla.md)
  - [ColorFabb PLA](colorfabb_pla.md)
  - [ColorFabb XT](colorfabb_xt.md)
  - [ColorFabb Bamboofill](colorfabb_bamboofill.md)

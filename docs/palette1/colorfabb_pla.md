@@ -6,6 +6,10 @@ For [Palette/Palette+](palette.md)
 
 Material | Values
 -------- | ------
+_ColorFabb PLA_ (ingoing) to [Amazon Basics PLA](amazon_basics_pla.md) (outgoing) | **Heat Factor**: 2, **Compression Factor**: 2, **Reverse Splicing**: False
+[Amazon Basics PLA](amazon_basics_pla.md) (ingoing) to _ColorFabb PLA_ (outgoing) | **Heat Factor**: 2, **Compression Factor**: 2, **Reverse Splicing**: False
+_ColorFabb PLA_ (ingoing) to [BAMtack PLA](bamtack_pla.md) (outgoing) | **Heat Factor**: 2, **Compression Factor**: 2, **Reverse Splicing**: False
+[BAMtack PLA](bamtack_pla.md) (ingoing) to _ColorFabb PLA_ (outgoing) | **Heat Factor**: 2, **Compression Factor**: 2, **Reverse Splicing**: False
 _ColorFabb PLA_ | **Heat Factor**: 2, **Compression Factor**: 2, **Reverse Splicing**: False
 _ColorFabb PLA_ (ingoing) to [ColorFabb XT](colorfabb_xt.md) (outgoing) | **Heat Factor**: 5, **Compression Factor**: 2, **Reverse Splicing**: False
 [ColorFabb XT](colorfabb_xt.md) (ingoing) to _ColorFabb PLA_ (outgoing) | **Heat Factor**: 5, **Compression Factor**: 5, **Reverse Splicing**: False
