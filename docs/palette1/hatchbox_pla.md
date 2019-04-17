@@ -6,6 +6,10 @@ For [Palette/Palette+](palette.md)
 
 Material | Values
 -------- | ------
+_Hatchbox PLA_ (ingoing) to [BAMtack PLA](bamtack_pla.md) (outgoing) | **Heat Factor**: 2, **Compression Factor**: 2, **Reverse Splicing**: False
+[BAMtack PLA](bamtack_pla.md) (ingoing) to _Hatchbox PLA_ (outgoing) | **Heat Factor**: 2, **Compression Factor**: 2, **Reverse Splicing**: False
+_Hatchbox PLA_ (ingoing) to [Capricorn Tri-Color Lava](capricorn_tri-color_lava.md) (outgoing) | **Heat Factor**: 2, **Compression Factor**: 2, **Reverse Splicing**: False
+[Capricorn Tri-Color Lava](capricorn_tri-color_lava.md) (ingoing) to _Hatchbox PLA_ (outgoing) | **Heat Factor**: 1.5, **Compression Factor**: 2, **Reverse Splicing**: False
 _Hatchbox PLA_ (ingoing) to [ColorFabb PLA](colorfabb_pla.md) (outgoing) | **Heat Factor**: 2, **Compression Factor**: 2, **Reverse Splicing**: False
 [ColorFabb PLA](colorfabb_pla.md) (ingoing) to _Hatchbox PLA_ (outgoing) | **Heat Factor**: 2, **Compression Factor**: 2, **Reverse Splicing**: False
 _Hatchbox PLA_ (ingoing) to [ColorFabb Bamboofill](colorfabb_bamboofill.md) (outgoing) | **Heat Factor**: 1, **Compression Factor**: 2, **Reverse Splicing**: False
