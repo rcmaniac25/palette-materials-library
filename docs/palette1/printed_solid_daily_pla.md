@@ -23,3 +23,5 @@ _Printed Solid Daily PLA_ (ingoing) to [PolyMaker PolyDissolve S1](polymaker_pol
 _Printed Solid Daily PLA_ | **Heat Factor**: 2.5, **Compression Factor**: 2, **Reverse Splicing**: False
 _Printed Solid Daily PLA_ (ingoing) to [Prusa PLA](prusa_pla.md) (outgoing) | **Heat Factor**: 2, **Compression Factor**: 2, **Reverse Splicing**: False
 [Prusa PLA](prusa_pla.md) (ingoing) to _Printed Solid Daily PLA_ (outgoing) | **Heat Factor**: 2, **Compression Factor**: 2, **Reverse Splicing**: False
+_Printed Solid Daily PLA_ (ingoing) to [Push Plastic PLA](push_plastic_pla.md) (outgoing) | **Heat Factor**: 1.5, **Compression Factor**: 2, **Reverse Splicing**: False
+[Push Plastic PLA](push_plastic_pla.md) (ingoing) to _Printed Solid Daily PLA_ (outgoing) | **Heat Factor**: 2, **Compression Factor**: 2, **Reverse Splicing**: False
