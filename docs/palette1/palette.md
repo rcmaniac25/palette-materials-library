@@ -16,5 +16,6 @@
  - [Hatchbox PLA](hatchbox_pla.md)
  - [PolyMaker PolyDissolve S1](polymaker_polydissolve_s1.md)
  - [Printed Solid Daily PLA](printed_solid_daily_pla.md)
+ - [Proto-Pasta HTPLA](proto-pasta_htpla.md)
  - [Prusa PLA](prusa_pla.md)
  - [Push Plastic PLA](push_plastic_pla.md)
